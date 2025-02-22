@@ -12,6 +12,7 @@ Features:
 - weather station with weather symbol, temperature and propability of precipitation indicator. Temperature range -19 to +39 degree celcius
 - optional: BSH states can activate a buzzer
 - log file which can be retrieved via a simple URL in your local network: http://smartdisplay.local
+- special functions: states can set the display off (e.g. at night) or can stop playing sonos speakers at hour home
 - power via USB
 - overall brightness can be adjusted in the program
 - low power consumption (0.5 W)
