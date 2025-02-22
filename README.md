@@ -2,7 +2,9 @@
 An ESP8266-based pixel display for the Bosch Smart Home System (BSH) showing user defined states and the current weather. The weather feature uses the openweathermap API. All state changes are recorded in a log file, which can be retrieved via a URL on your web browser.
 
 ![smart display](https://github.com/tobo-123/smart-home-pixel-display/blob/main/pictures/front.jpg)
-
+![smart display](https://github.com/tobo-123/smart-home-pixel-display/blob/main/pictures/weather.jpg)
+![smart display](https://github.com/tobo-123/smart-home-pixel-display/blob/main/pictures/weather_and_states.jpg)
+![smart display](https://github.com/tobo-123/smart-home-pixel-display/blob/main/pictures/assembly.jpg)
 
 Features:
 
