@@ -45,3 +45,5 @@ How to set it up:
 10. Remove the display from your PC and use it where you want. WIFI reception is needed ;)
 
 Wiring:
+
+![smart display](https://github.com/tobo-123/smart-home-pixel-display/blob/main/pictures/smart_pixel_display_wiring.png)
