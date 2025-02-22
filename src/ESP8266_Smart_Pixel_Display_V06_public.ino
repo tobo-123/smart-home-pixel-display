@@ -70,7 +70,7 @@ struct square {int pos_x; int pos_y; int r; int g; int b; };
 #####   !!!!!        Adjust the following entries        !!!!!    ##################
 ##################################################################################*/
 
-bool register_client = false;                                              //Keep true for the first run. When client is registered, change to false and re-upload the program to your ESP
+bool register_client = true;                                               //Keep true for the first run. When client is registered, change to false and re-upload the program to your ESP
 
 const char* WIFI_ssid = "xxxx";                                            //Your Wifi name
 const char* WIFI_password = "xxxx";                                        //Your Wifi password
