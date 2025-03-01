@@ -6,7 +6,7 @@ An ESP8266-based pixel display for the Bosch Smart Home System (BSH) showing use
 ![smart display](https://github.com/tobo-123/smart-home-pixel-display/blob/main/pictures/weather_and_states.jpg)
 ![smart display](https://github.com/tobo-123/smart-home-pixel-display/blob/main/pictures/assembly.jpg)
 
-Features:
+### Features:
 
 - 4 pixel areas which can be used independently in the BSH for indicating user defined states, e.g., for indicating open windows, high humidity or as a reminder for the alarm system
 - Weather station with weather symbol, temperature and propability of precipitation indicator. Temperature range -19 to +39 degree celcius
@@ -18,7 +18,7 @@ Features:
 - Overall brightness can be adjusted in the program
 - Low power consumption (0.5 W)
 
-What you need:
+### What you need:
 
 - ESP8266 microcontroller (D1 Mini with 16 pins) without attached pins
 - 8x8 Matrix with WS2812B LEDs (5V, size: 65 mm x 65 mm )
@@ -32,7 +32,7 @@ What you need:
 - A free OpenWeatherMap account
 - Arduino program code (in this repository)
 
-How to set it up:
+### How to set it up:
 
 1. Print the case. I use standard white PLA material. Both parts don't need supports. The orientation is with the front / back plate facing downwards. 15 % infill.
 2. Connect the display (and the buzzer, if used) to the ESP8266. See wiring diagram below. Insert everything into the case.
@@ -44,21 +44,21 @@ How to set it up:
 8. Wait until the ESP reboots automatically. If everything works, it shows the current weather. Open the webpage smarthome.local/config in a browser. Put in the names of the user defined states of your BSH app, the corresponding pixel area to indicate the state, flashing and buzzer mode. You can also add a "special function". Available at the moment: display_off, brightness_high and sonos_off.
 9. Remove the display from your PC and use it where you want. WIFI reception is needed ;)
 
-Wiring:
+### Wiring:
 
 ![smart display](https://github.com/tobo-123/smart-home-pixel-display/blob/main/pictures/smart_pixel_display_wiring.png)
 
-Flashing pixel areas at start-up
+### Flashing pixel areas at start-up
 
 After connecting the display to USB, the 4 pixel areas will indicate the boot procedure according to the table. (Directly at the beginning, all 4 areas flash shortly to show that all pixels work)
 
-| Pixel area       | Meaning        |
-| ---------------- | -------------- |
-|red flasing       | Content Cell   |
-|red on            | Content Cell   |
-|blue on           | Content Cell   |
-|yellow flashing 4x| Content Cell   |
-|yellow flashing   | Content Cell   |
-|yellow constant on| Content Cell   |
-|violett on        | Content Cell   |
+| Pixel area       | Meaning                                                                     |
+| ---------------- | --------------------------------------------------------------------------- |
+|red flasing       | Trying to connect to WIFI                                                   |
+|red on            | WIFI connected                                                              |
+|blue on           | Time recieved and file system started                                       |
+|yellow flashing 4x| Register mode: Press the button on the Bosch controller                     |
+|yellow flashing   | Trying to connect to Bosch controller                                       |
+|yellow constant on| Connected to Bosch controller                                               |
+|purple on         | Register mode: Successfully registered. Normal start up: Web server started |
 
