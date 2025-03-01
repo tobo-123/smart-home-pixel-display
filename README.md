@@ -47,3 +47,18 @@ How to set it up:
 Wiring:
 
 ![smart display](https://github.com/tobo-123/smart-home-pixel-display/blob/main/pictures/smart_pixel_display_wiring.png)
+
+Flashing pixel areas at start-up
+
+After connecting the display to USB, the 4 pixel areas will indicate the boot procedure according to the table. (Directly at the beginning, all 4 areas flash shortly to show that all pixels work)
+
+| Pixel area       | Meaning        |
+| ---------------- | -------------- |
+|red flasing       | Content Cell   |
+|red on            | Content Cell   |
+|blue on           | Content Cell   |
+|yellow flashing 4x| Content Cell   |
+|yellow flashing   | Content Cell   |
+|yellow constant on| Content Cell   |
+|violett on        | Content Cell   |
+
