@@ -50,15 +50,15 @@ An ESP8266-based pixel display for the Bosch Smart Home System (BSH) showing use
 
 ### Flashing pixel areas at start-up
 
-After connecting the display to USB, the 4 pixel areas will indicate the boot procedure according to the table. (Directly at the beginning, all 4 areas flash shortly to show that all pixels work)
+After connecting the display to USB, the 4 pixel areas will indicate the boot procedure according to the table. At the end of start-up, all 4 areas should be on. (Directly at the beginning, all 4 areas flash shortly to show that all pixels work)
 
-| Pixel area       | Meaning                                                                     |
-| ---------------- | --------------------------------------------------------------------------- |
-|red flasing       | Trying to connect to WIFI                                                   |
-|red on            | WIFI connected                                                              |
-|blue on           | Time recieved and file system started                                       |
-|yellow flashing 4x| Register mode: Press the button on the Bosch controller                     |
-|yellow flashing   | Trying to connect to Bosch controller                                       |
-|yellow constant on| Connected to Bosch controller                                               |
-|purple on         | Register mode: Successfully registered. Normal start up: Web server started |
+| Pixel area       | Meaning                                                                     | Troubleshooting                                                                                  |
+| ---------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+|red flashing      | Trying to connect to WIFI                                                   | If flashing doesn't stop, check your Wifi and Wifi password in programm code                     |
+|red on            | WIFI connected                                                              |                                                                                                  |
+|blue on           | Time received and file system started                                       |                                                                                                  |
+|yellow flashing 4x| Register mode: Press the button on the Bosch controller                     | If flashing doesn't stop, althoug you presses the button? Check the BSH IP in the program code   |
+|yellow flashing   | Trying to connect to Bosch controller                                       | If flashing doesn't stop, check if BSH controller is running                                     |
+|yellow constant on| Connected to Bosch controller                                               |                                                                                                  | 
+|purple on         | Register mode: Successfully registered. Normal start up: Web server started | If purple stays of during register process, check your BSH password (base64!) in program code    |
 
