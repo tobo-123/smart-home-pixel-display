@@ -54,7 +54,7 @@ After connecting the display to USB, the 4 pixel areas will indicate the boot pr
 
 | Pixel area       | Meaning                                                                     | Troubleshooting                                                                                |
 | ---------------- | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-|red flashing      | Trying to connect to WIFI                                                   | If flashing doesn't stop, check your WIFI and WIFI password in programm code                   |
+|red flashing      | Trying to connect to WIFI                                                   | If flashing doesn't stop, check your WIFI and WIFI password in program code                    |
 |red on            | WIFI connected                                                              |                                                                                                |
 |blue on           | Time received and file system started                                       |                                                                                                |
 |yellow flashing 4x| Register mode: Press the button on the Bosch controller                     | Flashing doesn't stop, although you pressed the button? Check the BSH IP in the program code   |
