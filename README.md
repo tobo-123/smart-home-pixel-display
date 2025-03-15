@@ -1,5 +1,5 @@
 # smart-home-pixel-display
-An ESP8266-based pixel display for the Bosch Smart Home System (BSH) showing user defined states and the current weather. The weather feature uses the openweathermap API. All state changes are recorded in a log file, which can be retrieved via a URL on your web browser.
+An ESP8266-based pixel display for the Bosch Smart Home System (BSH) showing user defined states and the current weather. The weather feature uses the openweathermap API. All state changes are recorded in a log file, which can be retrieved via a web page on your browser.
 
 ![smart display](https://github.com/tobo-123/smart-home-pixel-display/blob/main/pictures/front.jpg)
 ![smart display](https://github.com/tobo-123/smart-home-pixel-display/blob/main/pictures/weather.jpg)
@@ -9,18 +9,16 @@ An ESP8266-based pixel display for the Bosch Smart Home System (BSH) showing use
 ### Features:
 
 - 4 pixel areas which can be used independently in the BSH for indicating user defined states, e.g., for indicating open windows, high humidity or as a reminder for the alarm system
-- Weather station with weather symbol, temperature and propability of precipitation indicator. Temperature range -19 to +39 degree celcius
+- Shows weather forecast for the next hours with current weather symbol, temperature and propability of precipitation indicator. Temperature range -19 to +39 degree celcius
 - Optional buzzer which can be activated by user defined states
-- Log file accessable via a simple URL in your local network: http://smartdisplay.local
-- Configuration via web: http://smartdisplay.local/config
-- Special functions: states can set the display off (e.g. at night), increase display brigthness (e.g. at day) or can stop playing Sonos speakers at hour home
+- Log file and configuration via web page: http://smartdisplay.local
+- Special functions: states of your BSH can set the display off (e.g. at night), increase display brigthness (e.g. at day), can stop/play Sonos speakers at hour home and send commands to your computer (e.g. for shutdown). You need to run the software UDPrun at your PC for this.
 - Power via USB
-- Overall brightness can be adjusted in the program
 - Low power consumption (0.5 W)
 
 ### What you need:
 
-- ESP8266 microcontroller (D1 Mini with 16 pins) without attached pins
+- ESP8266 microcontroller (D1 Mini with 16 pins)
 - 8x8 Matrix with WS2812B LEDs (5V, size: 65 mm x 65 mm )
 - optional: a buzzer module
 - 3D printed case (.stl files in this repository)
@@ -40,8 +38,8 @@ An ESP8266-based pixel display for the Bosch Smart Home System (BSH) showing use
 4. Create a self-signed certificate and key with OpenSSL by using the command: openssl req -x509 -nodes -days 9999 -newkey rsa:2048 -keyout client-key.pem -out client-cert.pem
 5. Open the progam code with Arduino IDE. Open the client-key.pem and client-cert.pem files with notepad and copy the text in the corresponding sections of the program code. Also put in your WIFI name, WIFI password, BSH system password and BSH controller IP as well as the your OpenWeatherMap API key, city and country code. The BSH system password needs to be coded in Base64, there are many encoders online to do this for you (e.g., https://www.base64encode.org)
 6. Check if all necessary libraries are installed in Arduino IDE. Connect the ESP with your computer via USB cable and upload and run the program code.
-7. During first start-up, the display needs to be registered at the Bosch smart home system: Just press the button on your Bosch controller, when you see the yellow pixel area of the display flashing 4 times. The middle and right LED of your controller should flash now. Check in BSH app if "OSS Pixel Display" occurs at system -> mobil devices. If yes, the display is registered now. If not, check your Bosch system password and Bosch controller IP.
-8. Wait until the ESP reboots automatically. If everything works, it shows the current weather. Open the webpage smarthome.local/config in a browser. Put in the names of the user defined states of your BSH app, the corresponding pixel area to indicate the state, flashing and buzzer mode. You can also add a "special function". Available at the moment: display_off, brightness_high and sonos_off.
+7. During first start-up, the display starts in register mode: Just press the button on your Bosch controller, when you see the yellow pixel area of the display flashing 4 times. Check in BSH app if "OSS Pixel Display" occurs at system -> mobil devices. If yes, the display is registered now. If not, check your Bosch system password and Bosch controller IP.
+8. Wait until the ESP reboots automatically. If everything works, it shows the current weather. Open the webpage http://smartdisplay.local in a browser and click on config. Put in the names of the user defined states of your BSH app, the corresponding pixel area number to indicate the state, flashing and buzzer mode. You can also add a "special function". Available at the moment: display_off, brightness_high(value), sonos_off(IP), sonos_play(IP) and PC_execute(Name_of_PC|command|parameters)
 9. Remove the display from your PC and use it where you want. WIFI reception is needed ;)
 
 ### Wiring:
@@ -56,7 +54,7 @@ After connecting the display to USB, the 4 pixel areas will indicate the boot pr
 | ---------------- | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 |red flashing      | Trying to connect to WIFI                                                   | If flashing doesn't stop, check your WIFI and WIFI password in program code                    |
 |red on            | WIFI connected                                                              |                                                                                                |
-|blue on           | Time received and file system started                                       |                                                                                                |
+|blue on           | Time received and file system started                                       | If blue doesn't switch on: Is your WIFI connected to the internet?                             |
 |yellow flashing 4x| Register mode: Press the button on the Bosch controller                     | Flashing doesn't stop, although you pressed the button? Check the BSH IP in the program code   |
 |yellow flashing 1x| Trying to connect to Bosch controller                                       | If flashing doesn't stop, check if BSH controller is running                                   |
 |yellow constant on| Connected to Bosch controller                                               |                                                                                                | 
