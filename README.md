@@ -5,7 +5,7 @@ An ESP8266-based pixel display for the Bosch Smart Home System (BSH) showing use
 ![smart display](https://github.com/tobo-123/smart-home-pixel-display/blob/main/pictures/weather.jpg)
 ![smart display](https://github.com/tobo-123/smart-home-pixel-display/blob/main/pictures/weather_and_states.jpg)
 ![smart display](https://github.com/tobo-123/smart-home-pixel-display/blob/main/pictures/assembly.jpg)
-![smart display](https://github.com/tobo-123/smart-home-pixel-display/blob/main/pictures/menu.jpg)
+![smart display](https://github.com/tobo-123/smart-home-pixel-display/blob/main/pictures/menu.png)
 
 ### Features:
 
