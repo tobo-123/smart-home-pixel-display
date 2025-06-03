@@ -14,10 +14,10 @@ An ESP8266-based pixel display for the Bosch Smart Home System (BSH). It display
 - Shows weather forecast for the next hours with current weather symbol, temperature, wind speed and propability of precipitation indicator. Temperature range -19 to +39 degree celcius
 - Optional buzzer which can be activated by user defined states
 - Special functions: user defined states of your BSH can set the display off (e.g. at night), increase display brigthness (e.g. at day), can stop/play Sonos speakers at hour home and send commands to your computer (e.g. for shutdown). You need to run the software UDPrun at your PC for this. It also can trigger IFTTT commands.
-- Changes of user defined states are logged in a event log file
-- Weather data and data from your smart home, e.g. power consumptions, temperatures, valve postions, can be logged in a data log
+- Changes of user defined states are logged in an event log file
+- Weather data and data from smart home devices, e.g. power consumptions, temperatures, valve postions, can be logged in a data log
 - Web interface with dashboard function, direct access to event log, data chart and configuration page
-- Power via USB
+- Powered via USB
 - Low power consumption (0.5 W)
 
 ### What you need:
