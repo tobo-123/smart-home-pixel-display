@@ -1,5 +1,5 @@
 # smart-home-pixel-display
-An ESP8266-based pixel display for the Bosch Smart Home System (BSH). It displays the status of your smart home, logs data and events, displays the weather and can trigger actions of your smart home when certain weather conditions occur. The weather information is retrieved from openweathermap.com. The display can be shown and configured via a website in your browser.
+An ESP8266-based pixel display for the Bosch Smart Home System (BSH). It displays the status of your smart home, logs data and events, displays the weather and can trigger actions of your smart home when certain weather conditions occur. The weather information is retrieved from openweathermap.com. The display can be shown and configured via a website in your browser. You can also use the ESP on its owm (without display and case), if you are just interested in the logging functions.
 
 Hardware:
 
@@ -21,18 +21,18 @@ Web interface:
 - Special functions: user defined states of your BSH can set the display off (e.g. at night), increase display brigthness (e.g. at day), can stop/play Sonos speakers at hour home and send commands to your computer (e.g. for shutdown). You need to run the software UDPrun at your PC for this. It also can trigger IFTTT commands.
 - Changes of user defined states are logged in an event log file
 - Weather data and data from smart home devices, e.g. power consumptions, temperatures, valve postions, can be logged in a data log
-- Web interface with dashboard function, direct access to event log, data chart and configuration page
+- Web interface with dashboard function, direct access to event log, graphical data chart and configuration page
 - Powered via USB
 - Low power consumption (0.5 W)
+- Upload-tool for Windows, so you don't need to install Arduino or anything else to upload the firmware to the ESP
 
 ### What you need:
 
 If you want to use just the webpage functionality, you need:
 - ESP8266 microcontroller (D1 Mini with 16 pins)
 - micro USB cable
-- Arduino IDE on your pc
 - A free OpenWeatherMap account
-- Arduino program code (in this repository)
+- Arduino program code and upload-tool from this repository
 
 If you want to build the pixel display physically, you also need:
 - 8x8 Matrix with WS2812B LEDs (5V, size: 65 mm x 65 mm )
@@ -48,13 +48,9 @@ If you want to use just the webpage functionality, start with step 3.
 1. Print the case. I use standard white PLA material. Both parts don't need supports. The orientation is with the front / back plate facing downwards. 15 % infill.
 2. Connect the display (and the buzzer, if used) to the ESP8266. See wiring diagram below. Insert everything into the case.
 3. Open a free account at openweathermap and note your API key.
-4. Open the program with Arduino IDE and jump to config.h. Put in your WIFI name, WIFI password, BSH system password and BSH controller IP as well as the your OpenWeatherMap API key, city and country code. The BSH system password needs to be coded in Base64, there are many encoders online to do this for you (e.g., https://www.base64encode.org)
-5. Check if all necessary libraries are installed in Arduino IDE. Connect the ESP with your computer via USB cable and upload the program code.
-6. During first start-up, the display starts in register mode: Just press the button on your Bosch controller, when you see the yellow pixel area of the display flashing 4 times (or check serial monitor). Check in BSH app if "OSS Pixel Display" occurs at system -> mobil devices. If yes, the display is registered now. If not, check your Bosch system password and Bosch controller IP.
-7. Wait until the ESP reboots automatically. If everything works, it shows the current weather. Remove the display from your PC and use it where you want. WIFI reception is needed.
-
-Optional:
-The software comes with a pre-installed key and cert for safe communication with the BSH controller. It is recommended to use your own key and cert. Create a self-signed certificate and key with OpenSSL by using the command: "openssl req -x509 -nodes -days 9999 -newkey rsa:2048 -keyout client-key.pem -out client-cert.pem". Open the client-key.pem and client-cert.pem files with notepad and copy the text in the corresponding sections of the config.ino. 
+4. Download the latest firmware (*.bin), esptool.exe and SmartHomePixelDisplay_Uploader.exe from this repository
+5. Connect the ESP with your computer via USB cable and open SmartHomePixelDisplay_Uploader.exe. It will guide you through the setup process. You need your WIFI SSID, WIFI password, BSH system password and BSH controller IP. You can find the BSH IP in your Bosch Smart Home App. During setup, you need to press the button on your Bosch controller.
+6. After sucessfully registration of the ESP at the Bosch controller, remove the device from your PC and use it where you want. WIFI reception is needed.
 
 ### Configuration:
 
