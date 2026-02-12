@@ -26,6 +26,10 @@ Web interface:
 - Low power consumption (0.5 W)
 - Upload-tool for Windows, so you don't need to install Arduino or anything else to upload the firmware to the ESP
 
+- The display shows the following information:
+
+![smart display](https://github.com/tobo-123/smart-home-pixel-display/blob/main/pictures/symbols.png)
+
 ### What you need:
 
 If you want to use just the webpage functionality, you need:
