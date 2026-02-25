@@ -71,7 +71,7 @@ You can also add a "special function". Available at the moment:
 |PC_execute(Name_of_PC|command|parameters)| Send a windows command to a pc*                                             | -
 |IFTTT(event)                             | Send an IFTTT webhook for a event                                           | -
 
-*For the pc execute function, you need to run [this program](https://www.beispiel.de](https://www.softpedia.com/get/Internet/Remote-Utils/UDPRun.shtml) on your pc. For eample, the following special function will shut down your pc: pc_execute(PC_NAME|c:\windows\system32\shutdown.exe|/s /t 0);
+*For the pc execute function, you need to run [this program](https://www.softpedia.com/get/Internet/Remote-Utils/UDPRun.shtml) on your pc. For eample, the following special function will shut down your pc: pc_execute(PC_NAME|c:\windows\system32\shutdown.exe|/s /t 0);
 
 Each special function must be followed by a “;” in the input field.
 
