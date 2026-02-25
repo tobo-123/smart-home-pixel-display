@@ -69,7 +69,7 @@ You can also add a "special function". Available at the moment:
 |sonos_stop(IP)                           | Send a stop command to a sonos speaker with IP                              | -
 |sonos_play(IP)                           | Send a play command to a sonos speaker with IP                              | -
 |PC_execute(Name_of_PC|command|parameters)| Send a windows command to a pc*                                             | -
-|IFTTT(event)                             | Send an IFTTT webhook for a event                                           | -
+|IFTTT(event)                             | Send an IFTTT webhook for an event                                          | -
 
 *For the pc execute function, you need to run [this program](https://www.softpedia.com/get/Internet/Remote-Utils/UDPRun.shtml) on your pc. For eample, the following special function will shut down your pc: pc_execute(PC_NAME|c:\windows\system32\shutdown.exe|/s /t 0);
 
