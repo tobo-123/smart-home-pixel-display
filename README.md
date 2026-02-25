@@ -15,10 +15,10 @@ Web interface:
 
 ### Features:
 
-- 4 pixel areas which can be used independently for indicating user defined states of your Bosch Smart Home System, e.g., for indicating open windows, high humidity or as a reminder for the alarm system
+- 4 status indicators which can be used independently for showing user defined states of your Bosch Smart Home System, e.g., for indicating open windows, high humidity or as a reminder for the alarm system
 - Shows weather forecast for the next hours with current weather symbol, temperature, wind speed and propability of precipitation indicator. Temperature range -19 to +39 degree celcius
 - Optional buzzer which can be activated by user defined states
-- Special functions: user defined states of your BSH can set the display off (e.g. at night), increase display brigthness (e.g. at day), can stop/play Sonos speakers at hour home and send commands to your computer (e.g. for shutdown). You need to run the software UDPrun at your PC for this. It also can trigger IFTTT commands.
+- Special functions: user defined states of your BSH can set the display off (e.g. at night), increase display brigthness (e.g. at day), can stop/play Sonos speakers at hour home and send commands to your computer (e.g. for shutdown). It also can trigger IFTTT commands.
 - Changes of user defined states are logged in an event log file
 - Weather data and data from smart home devices, e.g. power consumptions, temperatures, valve postions, can be logged in a data log
 - Web interface with dashboard function, direct access to event log, graphical data chart and configuration page
@@ -36,7 +36,7 @@ If you want to use just the webpage functionality, you need:
 - ESP8266 microcontroller (D1 Mini with 16 pins)
 - micro USB cable
 - A free OpenWeatherMap account
-- Arduino program code and upload-tool from this repository
+- Firmware and upload-tool from this repository
 
 If you want to build the pixel display physically, you also need:
 - 8x8 Matrix with WS2812B LEDs (5V, size: 65 mm x 65 mm )
@@ -58,7 +58,22 @@ If you want to use just the webpage functionality, start with step 3.
 
 ### Configuration:
 
-Open the webpage http://smartdisplay.local in a browser and open config. Go to "Configuration of user defined states". Select the name of the user defined state, the corresponding pixel area number to indicate the state, flashing and buzzer mode. You can also add a "special function". Available at the moment: display_off, brightness_high(value), sonos_off(IP), sonos_play(IP), PC_execute(Name_of_PC|command|parameters) and IFTTT(event).
+Open the webpage http://smartdisplay.local in a browser and open config. Go to "Configuration of user defined states". Select the name of the user defined state, the corresponding indicator number to show the state, flashing and buzzer mode.
+
+You can also add a "special function". Available at the moment:
+
+| Special function                        | If user defined state turns on                                              | If user defined state tuns off                           
+| --------------------------------------- | --------------------------------------------------------------------------- | -------------------------------------------
+|display_off                              | Turns the display off.                                                      | Turns the display on.
+|brightness_high(value)                   | Sets the display brightness to a certain level (0-20)                       | Sets the display brightness back to standard level  
+|sonos_stop(IP)                           | Send a stop command to a sonos speaker with IP                              | -
+|sonos_play(IP)                           | Send a play command to a sonos speaker with IP                              | -
+|PC_execute(Name_of_PC|command|parameters)| Sends a windows command to a pc*                                             | -
+|IFTTT(event)                             | Sends an IFTTT webhook for a event                                          | -
+
+*For the pc execute function, you need to run [this program]([https://www.beispiel.de](https://www.softpedia.com/get/Internet/Remote-Utils/UDPRun.shtml)) on your pc. For eample, the following special function will shut down your pc: pc_execute(PC_NAME|c:\windows\system32\shutdown.exe|/s /t 0);
+
+Each special function must be followed by a “;” in the input field.
 
 ### Wiring:
 
