@@ -64,14 +64,14 @@ You can also add a "special function". Available at the moment:
 
 | Special function                        | If user defined state turns on                                              | If user defined state tuns off                           
 | --------------------------------------- | --------------------------------------------------------------------------- | -------------------------------------------
-|display_off                              | Turns the display off.                                                      | Turns the display on.
+|display_off                              | Turns the display off                                                       | Turns the display on
 |brightness_high(value)                   | Sets the display brightness to a certain level (0-20)                       | Sets the display brightness back to standard level  
 |sonos_stop(IP)                           | Send a stop command to a sonos speaker with IP                              | -
 |sonos_play(IP)                           | Send a play command to a sonos speaker with IP                              | -
-|PC_execute(Name_of_PC|command|parameters)| Sends a windows command to a pc*                                             | -
-|IFTTT(event)                             | Sends an IFTTT webhook for a event                                          | -
+|PC_execute(Name_of_PC|command|parameters)| Send a windows command to a pc*                                             | -
+|IFTTT(event)                             | Send an IFTTT webhook for a event                                           | -
 
-*For the pc execute function, you need to run [this program]([https://www.beispiel.de](https://www.softpedia.com/get/Internet/Remote-Utils/UDPRun.shtml)) on your pc. For eample, the following special function will shut down your pc: pc_execute(PC_NAME|c:\windows\system32\shutdown.exe|/s /t 0);
+*For the pc execute function, you need to run [this program](https://www.beispiel.de](https://www.softpedia.com/get/Internet/Remote-Utils/UDPRun.shtml) on your pc. For eample, the following special function will shut down your pc: pc_execute(PC_NAME|c:\windows\system32\shutdown.exe|/s /t 0);
 
 Each special function must be followed by a “;” in the input field.
 
